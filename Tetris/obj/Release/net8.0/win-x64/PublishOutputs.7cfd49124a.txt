@@ -1,0 +1,2 @@
+/home/mk/Projects/Tetris/bin/Release/net8.0/win-x64/publish/Tetris.pdb
+/home/mk/Projects/Tetris/bin/Release/net8.0/win-x64/publish/Tetris.exe

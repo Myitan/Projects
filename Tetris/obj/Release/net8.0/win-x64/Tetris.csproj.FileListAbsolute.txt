@@ -1,0 +1,14 @@
+/home/mk/Projects/Tetris/bin/Release/net8.0/win-x64/Tetris.exe
+/home/mk/Projects/Tetris/bin/Release/net8.0/win-x64/Tetris.deps.json
+/home/mk/Projects/Tetris/bin/Release/net8.0/win-x64/Tetris.runtimeconfig.json
+/home/mk/Projects/Tetris/bin/Release/net8.0/win-x64/Tetris.dll
+/home/mk/Projects/Tetris/bin/Release/net8.0/win-x64/Tetris.pdb
+/home/mk/Projects/Tetris/obj/Release/net8.0/win-x64/Tetris.GeneratedMSBuildEditorConfig.editorconfig
+/home/mk/Projects/Tetris/obj/Release/net8.0/win-x64/Tetris.AssemblyInfoInputs.cache
+/home/mk/Projects/Tetris/obj/Release/net8.0/win-x64/Tetris.AssemblyInfo.cs
+/home/mk/Projects/Tetris/obj/Release/net8.0/win-x64/Tetris.csproj.CoreCompileInputs.cache
+/home/mk/Projects/Tetris/obj/Release/net8.0/win-x64/Tetris.dll
+/home/mk/Projects/Tetris/obj/Release/net8.0/win-x64/refint/Tetris.dll
+/home/mk/Projects/Tetris/obj/Release/net8.0/win-x64/Tetris.pdb
+/home/mk/Projects/Tetris/obj/Release/net8.0/win-x64/Tetris.genruntimeconfig.cache
+/home/mk/Projects/Tetris/obj/Release/net8.0/win-x64/ref/Tetris.dll
