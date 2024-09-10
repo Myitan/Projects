@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gnSTzN8PQd6YI4UYt9OhwYTqEN9yjUvhiDT08iY6SaDFEXlXNXNAjcLjUTEMyWalNHRwDRNYJs/iDbArvZYAbg==",
+  "dgSpecHash": "Yxx3lIosgboB+dgVJ3V7AsNeSFELyrZnxkhDp+vlN0By040dz2YXqj4EYeYt+neoWu2inbTQAkvbNphEbSuKXg==",
   "success": true,
   "projectFilePath": "/home/mk/Projects/Tetris/Tetris.csproj",
-  "expectedPackageFiles": [
-    "/home/mk/.nuget/packages/microsoft.net.illink.tasks/8.0.8/microsoft.net.illink.tasks.8.0.8.nupkg.sha512",
-    "/home/mk/.nuget/packages/microsoft.netcore.app.host.win-x64/8.0.8/microsoft.netcore.app.host.win-x64.8.0.8.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
