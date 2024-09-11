@@ -1,14 +1,12 @@
-# Terminal Tetris
+# Projects
 
-This is a simple implementation of the classic Tetris game, designed to run in the terminal. The game is built using C# and runs in a console environment. It includes basic Tetris functionalities like rotating and moving tetrominoes, line clearing, scoring, and level progression.
+This repo is an archive of my coding projects.
 
 ## Features
 
-- Randomly generated tetrominoes
-- Rotation and movement controls
-- Line clearing and scoring
-- Level progression with increasing speed
-- Game over detection
+- Terminal Chess
+- Terminal TicTacToe
+- Terminal Tetris
 
 ## How to Run
 
@@ -24,7 +22,7 @@ This is a simple implementation of the classic Tetris game, designed to run in t
    After building the project, you can run the game using:
    ```bash
    dotnet run
-# Controls
+# Controls for tetris
   - Move Left: A
   - Move Right: D
   - Rotate: W
