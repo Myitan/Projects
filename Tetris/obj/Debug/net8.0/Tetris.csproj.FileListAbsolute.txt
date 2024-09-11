@@ -12,3 +12,4 @@
 /home/mk/Projects/Tetris/obj/Debug/net8.0/Tetris.pdb
 /home/mk/Projects/Tetris/obj/Debug/net8.0/Tetris.genruntimeconfig.cache
 /home/mk/Projects/Tetris/obj/Debug/net8.0/ref/Tetris.dll
+/home/mk/Projects/Tetris/obj/Debug/net8.0/Tetris.sourcelink.json

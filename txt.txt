@@ -1,0 +1,144 @@
+private bool IsCheckmate(bool isWhite)
+{
+    if (!IsKingInCheck(isWhite)) return false; // King is not in check
+
+    // Check if there are any legal moves to escape check
+    for (int x = 0; x < 8; x++)
+    {
+        for (int y = 0; y < 8; y++)
+        {
+            if (board[x, y] == (isWhite ? 'P' : 'p') || 
+                board[x, y] == (isWhite ? 'N' : 'n') || 
+                board[x, y] == (isWhite ? 'R' : 'r') || 
+                board[x, y] == (isWhite ? 'B' : 'b') || 
+                board[x, y] == (isWhite ? 'Q' : 'q') || 
+                board[x, y] == (isWhite ? 'K' : 'k'))
+            {
+                Piece piece = pieces[board[x, y]];
+                for (int endX = 0; endX < 8; endX++)
+                {
+                    for (int endY = 0; endY < 8; endY++)
+                    {
+                        if (piece.ValidateMove(x, y, endX, endY, board))
+                        {
+                            // Temporarily move the piece
+                            char temp = board[endX, endY];
+                            board[endX, endY] = board[x, y];
+                            board[x, y] = ' ';
+                            if (!IsKingInCheck(isWhite))
+                            {
+                                // Revert the move
+                                board[x, y] = board[endX, endY];
+                                board[endX, endY] = temp;
+                                return false; // There is a move that removes check
+                            }
+                            // Revert the move
+                            board[x, y] = board[endX, endY];
+                            board[endX, endY] = temp;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return true; // No move can escape check, so it's checkmate
+}
+
+
+    private bool IsStalemate(bool isWhite)
+    {
+        if (IsKingInCheck(isWhite)) return false; // Player is in check
+
+        // Check if there are any legal moves
+        for (int x = 0; x < 8; x++)
+        {
+            for (int y = 0; y < 8; y++)
+            {
+                if (board[x, y] == (isWhite ? 'P' : 'p') || 
+                    board[x, y] == (isWhite ? 'N' : 'n') || 
+                    board[x, y] == (isWhite ? 'R' : 'r') || 
+                    board[x, y] == (isWhite ? 'B' : 'b') || 
+                    board[x, y] == (isWhite ? 'Q' : 'q') || 
+                    board[x, y] == (isWhite ? 'K' : 'k'))
+                {
+                    Piece piece = pieces[board[x, y]];
+                    for (int endX = 0; endX < 8; endX++)
+                    {
+                        for (int endY = 0; endY < 8; endY++)
+                        {
+                            if (piece.ValidateMove(x, y, endX, endY, board))
+                            {
+                                // Temporarily move the piece
+                                char temp = board[endX, endY];
+                                board[endX, endY] = board[x, y];
+                                board[x, y] = ' ';
+                                if (!IsKingInCheck(isWhite))
+                                {
+                                    // Revert the move
+                                    board[x, y] = board[endX, endY];
+                                    board[endX, endY] = temp;
+                                    return false; // There is a move available
+                                }
+                                // Revert the move
+                                board[x, y] = board[endX, endY];
+                                board[endX, endY] = temp;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return true; // No move available, so it's stalemate
+    }
+
+public bool MovePiece(int startX, int startY, int endX, int endY)
+{
+    char piece = board[startX, startY];
+    Piece pieceObj;
+
+    // Retrieve the piece object from the dictionary
+    if (!pieces.TryGetValue(piece, out pieceObj))
+    {
+        Console.WriteLine("Invalid piece.");
+        return false;
+    }
+
+    // Check if the move is valid
+    bool isValid = pieceObj.ValidateMove(startX, startY, endX, endY, board);
+    if (!isValid)
+    {
+        Console.WriteLine("Invalid move.");
+        return false;
+    }
+
+    // Capture the opponent's piece if there is one
+    char destinationPiece = board[endX, endY];
+    if (destinationPiece != ' ')
+    {
+        if (Char.IsUpper(destinationPiece))
+            capturedBlackPieces.Add(destinationPiece);
+        else
+            capturedWhitePieces.Add(destinationPiece);
+    }
+
+    // Perform the move
+    board[endX, endY] = piece;
+    board[startX, startY] = ' ';
+
+    // Check for checkmate or stalemate
+    if (IsCheckmate(isWhiteTurn))
+    {
+        Console.WriteLine(isWhiteTurn ? "White wins by checkmate!" : "Black wins by checkmate!");
+        return false;
+    }
+    if (IsStalemate(isWhiteTurn))
+    {
+        Console.WriteLine("Stalemate!");
+        return false;
+    }
+
+    // Toggle the turn
+    isWhiteTurn = !isWhiteTurn;
+
+    return true;
+}
