@@ -29,7 +29,6 @@ This repo is an archive of my coding projects.
   - Move Down: S
 # Dependencies
   - .NET SDK 8.0
-# Contributing
-  Feel free to do whatever you want with this code.
+
 # License
   This project is licensed under the MIT License.
